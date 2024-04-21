@@ -55,6 +55,8 @@
 									<div class="content">
 										<ul> 
 											<li>Stealth Startup: Coding, finetuning and evaluating OpenAI GPT transformer generative-AI pipeline model to implement Prompt Engineering techniques to verify and improve quality of completions. Documented and analyzed results using charts, Rogue, Blue, Bert scoring techniques, and made recommendation regarding the choice of prompts with respect to implementations and configurations
+												<li>Trained from scratch Huggingface ROBERTaMLM (small size 84M) parameters on Google Colab against oscar.eo.txt file. Trained model using first 10k lines from file. Code on <a href="https://github.com/jayc279/GenAI_LLM/blob/main/train_from_scratch/train_from_scratch_smallBERTa_12_6.ipynb" target="_blank">GitHub</a>
+												</li>
 												<li>Pretrained and Finetuned <a href="https://github.com/jayc279/GenAI_LLM/blob/main/pre_trained_fine_tuned/LoRA_pretrain_google_flan_t5_small_samsum.ipynb" target="_blank">Google Flan-T5-small</a> (<a href="https://huggingface.co/google/flan-t5-small" target="_blank">Sequence-to-Sequence</a>) Modelagainst <a href="https://huggingface.co/datasets/samsum" target="_blank">samsum</a> dataset using PEFT LoRA, an Prompt instructions and verify Rogue and Blue scores against test dataset
 													<li>Pretrain and generate image captions using <a href="https://github.com/jayc279/GenAI_LLM/blob/main/pre_trained_fine_tuned/image_captioning_h_and_m_fashion_blip.ipynb" target="_blank">Salesforce blip model</a> (<a href="https://huggingface.co/Salesforce/blip-image-captioning-base" target="_blank">Vision Model</a>) against <a href="https://huggingface.co/datasets/tomytjandra/h-and-m-fashion-caption" target="_blank">tomytjandra/h-and-m-fashion-caption</a> using Zero-Shot and a training sample of 50 images and used the trained model to predict 11 images from test dataset. Bert F1 score ranges between 85% -to- 95%, Blue score is 14.9%, and RougeL is 46.44% 
 														<li>Streamlit App <a href="https://github.com/jayc279/GenAI_LLM/tree/main/genai_apps/zilliar_chat" target="_blank">zilliar_chat</a> using Langchain and Chatgpt (<a href="https://platform.openai.com/overview" target="_blank">OpenAI</a>) model. App requires User access token to enable App prompt. Implemented Agent Chain to include 'wikipedia', 'ddg-search', 'arxiv'(working on enhancements)
@@ -158,9 +160,16 @@
 
 									<div class="posts">
 										<article>
-											<a href="https://github.com/jayc279/GenAI_LLM/blob/main/pre_trained_fine_tuned/LoRA_pretrain_google_flan_t5_small_samsum.ipynb" target="_blank"/>
-											<img src="images_work/flan_t5_small.png" alt="Flan-T5-small"/></a><br />
+											<h3>Trained from scratch Huggingface ROBERTaMLM Model</h3>
+											<p>
+											Created a config to decrease number of parameters to 84m and trained on Google Colab against oscar.eo.txt file (approx. 1 million lines), picked 10k lines from file. Split the file into train, eval, and test sets. For tokenization used ByteLevelBPETokenizer, BertProcessing, and RobertaTokenizerFast. Due to machine resources trained on 10 epochs.
+											</p>
+											<ul class="actions">
+												<li><a href="https://github.com/jayc279/GenAI_LLM/blob/main/train_from_scratch/train_from_scratch_smallBERTa_12_6.ipynb" target="_blank" class="button">GitHub</a></li>
+											</ul>
+										</article>
 
+										<article>
 											<h3>Pretraining Google Flan-T5-small against ‘samsum’ dataset</h3>
 											<p>Pretraining Google Flan-T5-small against ‘samsum’ dataset using PEFT LoRA, an Prompt instructions and verify ROGUE and BLUE scores against test dataset</p>
 											<ul class="actions">
@@ -169,9 +178,6 @@
 										</article>
 
 										<article>
-											<a href="https://github.com/jayc279/GenAI_LLM/blob/main/pre_trained_fine_tuned/image_captioning_h_and_m_fashion_blip.ipynb" target="_blank"/>
-											<img src="images_work/blip.png" alt="Explainability"/></a><br />
-
 											<h3>Pretrain and generate image captions using Salesforce blip model</h3>
 											<p>Pretrain and generate image captions using Salesforce blip model against ‘h-and-m-fashion-caption’ dataset and generate text related to image in test dataset and check accuracy scores</p>
 											<ul class="actions">
@@ -180,9 +186,6 @@
 										</article>
 
 										<article>
-											<a href="https://zilliarchat.streamlit.app/" target="_blank"/>
-											<img src="images_work/zilliar_chat.png" alt="Explainability"/></a><br />
-
 											<h3>Streamlit App zilliar_chat</h3>
 											<p>Streamlit App zilliar_chat using Langchain and OpenAI model. App requires User access token to enable App prompt. Implemented App to include Agent Chain (this is first version – working on enhancements)</p>
 											<ul class="actions">
@@ -191,9 +194,6 @@
 										</article>
 
 										<article>
-											<a href=https://github.com/jayc279/jayc279.github.io/blob/main/work/dlnn-onehot-decisiontree-pca-hypertuning-flow.ipynb target="_blank"/>
-											<img src="images_work/explainability_1.jpg" alt="Explainability"/></a><br />
-
 											<h3>Explainability of DLNN limitation on a Multiclass Classification Dataset</h3>
 											<p>Evaluated Multiclass Classification dataset (Obesity Risk) to provide a comprehensive understanding of deep learning fully connected Neural Network behavior when a dataset contains many categorical columns and most of which are binary. Conducted a thorough validation of model performance using various scaling, encoding, Decision Trees, and PCA techniques, conclusion is that DNNs decisions are biased. Thorough investigation is needed to better understand such behavior projected by DNNs.</p>
 											<ul class="actions">
@@ -203,9 +203,6 @@
 										</article>
 
 										<article>
-											<a href=https://www.kaggle.com/code/jayyanamandala/dl-nn-sennet-hoa-resnet-34 target="_blank"/>
-											<img src="images_work/vascular.png" /></a><br />
-											
 											<h3>34-layer ResNet - predict the effect of vasculature "flow of blood, oxygen"</h3>
 											<p>Designed and implemented a 34-layer Residual Deep Neural Network similar to 
 											ResNet50 for Kaggle competition on 3D multiresolution imaging datasets of kidneys 
@@ -217,11 +214,7 @@
 											</ul>
 										</article>
 
-										<!--
 										<article>
-											<a href=https://jyanamandala.shinyapps.io/swiftkey_next_word_prediction/ target="_blank"/>
-											<img src="images_work/nlp.jpg" alt="NLP"/></a><br />
-											
 											<h3>NLP - Capstone project - SwiftKey</h3>
 											<p>Exploratory analysis done to achieve the goal towards an eventual app on Shiny, and certification as a Data Science 
 											Specialist awarded by John Hopkin’s University<br />
@@ -236,9 +229,6 @@
 										</article>
 
 										<article>
-											<a href= https://jyanamandala.shinyapps.io/price_prediction/ target="_blank"/>
-											<img src="images_work/home_prices.jpg" alt="Hyperparameter Tuning Flow"/></a><br />
-											
 											<h3>Home Prices Prediction - King County, Washington State</h3>
 											<p>The dataset was provided during "Machine Learning Specialization" certification course offered by Univ of Washington, 
 											and taught by: -- Emily Fox, Amazon Professor of Machine Learning -- Carlos Guestrin, Amazon Professor of Machine 
@@ -250,12 +240,7 @@
 												<li><a href= https://jyanamandala.shinyapps.io/price_prediction/ class="button" target="_blank"/>Shiny App</a></li>
 											</ul>
 										</article>
-										-->
-										
 										<article>
-											<a href= target="_blank"/>
-											<img src="images_work/tuning1.jpg" alt="Hyperparameter Tuning Flow"/></a><br />
-											
 											<h3>Hyperparameters Fine-Tuning - A Deep Dive</h3>
 											<p>Hands-on experience in fine tuning hyper parameters for Deep Neural Networks using 
 											Keras_Tuner, Bayesian Optimization, Random Search techniques.</p>
@@ -266,9 +251,6 @@
 										</article>
 
 										<article>
-											<a href=https://www.kaggle.com/code/jayyanamandala/keras-tuner-hyperparameters-search-obesiry-risk target="_blank"/>
-											<img src="images_work/obesity.jpg" alt="Multi-Class Prediction of Obesity Risk" /></a><br />
-					
 											<h3>Predict Cardiovascular disease risk in individuals with high obesity</h3>
 											<p>Designed and implemented Fully connected Neural Nets to Predict Cardiovascular 
 											disease risk in individuals with high obesity</p>
@@ -279,9 +261,6 @@
 										</article>
 
 										<article>
-											<a href=https://www.kaggle.com/code/jayyanamandala/deep-learning-nn-parameter-search-bankchurn target="_blank"/>
-											<img src="images_work/bank-churn.png" alt="Binary Classification with a Bank Churn Dataset" /></a><br />
-											
 											<h3>Binary Classification with a Bank Customer Churn Rate</h3>
 											<p>Designed a fully connected Deep Neural Network to predict whether a customer continues 
 											with their account or closes them for Binary Classification with a Bank Churn Dataset.</p>											
@@ -291,8 +270,6 @@
 											</ul>
 										</article>
 										<article>
-											<a href=https://www.kaggle.com/code/jayyanamandala/deepnn-hyperparameters-tuned-copy-and-improve target="_blank"/>
-											<img src="images_work/eda_analysis.jpg" alt="EDA on Obesity Datasets" /></a><br />
 											<h3>Exploratory Data Analysis</h3>
 											<p>EDA analysis on Obesity dataset to improve accuracy for Deep Neural Networks. If the dataset is not
 											normalized - no skew, then Neural Nets prediction is high, else the results are stuck in a valley</p>
